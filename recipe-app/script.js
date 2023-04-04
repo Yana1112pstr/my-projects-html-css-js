@@ -10,6 +10,7 @@ getRandomMeal();
 fetchFavMeals();
 
 async function getRandomMeal() {
+  //load random recipe
   const resp = await fetch(
     "https://www.themealdb.com/api/json/v1/1/random.php"
   );
@@ -20,6 +21,7 @@ async function getRandomMeal() {
 }
 
 async function getMealById(id) {
+  // load recipes by id (from LS to favMeal)
   const resp = await fetch(
     "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
   );
@@ -30,6 +32,7 @@ async function getMealById(id) {
 }
 
 async function getMealsBySearch(term) {
+  // load recipes by search
   const resp = await fetch(
     "https://www.themealdb.com/api/json/v1/1/search.php?s=" + term
   );
@@ -39,6 +42,9 @@ async function getMealsBySearch(term) {
 }
 
 function addMeal(mealData, random = false) {
+  // show meal container (random/search);
+  // add to fav/remove
+  // open popup
   const meal = document.createElement("div");
   meal.classList.add("meal)");
   meal.innerHTML = `
@@ -73,7 +79,8 @@ function addMeal(mealData, random = false) {
     fetchFavMeals();
   });
 
-  meal.addEventListener("click", () => {
+  const mealHeader = meal.querySelector(".meal-header");
+  mealHeader.addEventListener("click", () => {
     showMealInfo(mealData);
   });
 
@@ -100,7 +107,7 @@ function getMealLS() {
 }
 
 async function fetchFavMeals() {
-  // clean fav cont
+  // get favMeal from ls, show them
   favContainer.innerHTML = "";
   const mealIds = getMealLS();
   for (let i = 0; i < mealIds.length; i++) {
@@ -112,6 +119,7 @@ async function fetchFavMeals() {
 }
 
 function addMealFav(mealData) {
+  // create favMeal container
   const favMeal = document.createElement("li");
   favMeal.innerHTML = `
             <img
@@ -137,9 +145,8 @@ function addMealFav(mealData) {
 }
 
 function showMealInfo(mealData) {
-  // clean it up
+  //  create popup
   mealInfoEl.innerHTML = "";
-  // update meal info
   const mealEl = document.createElement("div");
 
   const ingredients = [];
@@ -174,6 +181,7 @@ function showMealInfo(mealData) {
 }
 
 searchBtn.addEventListener("click", async () => {
+  // search recipes by term
   meals.innerHTML = "";
 
   const search = searchTerm.value;
@@ -188,9 +196,6 @@ searchBtn.addEventListener("click", async () => {
 });
 
 popupCloseBtn.addEventListener("click", () => {
+  // close popup
   popupContainer.classList.add("hidden");
 });
-
-// popupContainer.addEventListener("click", (e) => {
-//   e.currentTarget.popupContainer.classList.add("hidden");
-// });
