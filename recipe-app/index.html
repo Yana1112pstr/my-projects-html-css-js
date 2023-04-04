@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="mobile-container">
+      <button class="btn-goback" type="button">
+        <a href="../main-project/index.html">Go back</a>
+      </button>
+      <header>
+        <input type="text" id="search-term" />
+        <button id="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </header>
+      <div class="fav-container">
+        <h3>Favorite Meals</h3>
+        <ul class="fav-meals" id="fav-meals"></ul>
+      </div>
+      <div class="meals" id="meals"></div>
+    </div>
+    <div id="popup-container" class="popup-container hidden">
+      <div class="popup">
+        <button id="close-popup" class="close-popup">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="meal-info" id="meal-info">
+          <!-- <h1>Meal title</h1>
+          <img
+            src="https://www.themealdb.com/images/media/meals/vmz7gl1614350221.jpg"
+            alt=""
+          />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat,
+            similique ad! Autem accusantium ea odit ad. Architecto, nobis. Sint
+            ipsum ab culpa. Cumque veniam odit inventore expedita quas iure
+            iste?
+          </p>
+          <ul>
+            <li>ing 1 / measure</li>
+            <li>ing 1 / measure</li>
+            <li>ing 1 / measure</li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

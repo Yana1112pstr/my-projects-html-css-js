@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-image: url("./pencils.jpg");
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+  padding: 15px;
+}
+
+.main-header {
+  text-align: center;
+  font-size: 30px;
+  transition: font-size 1s;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-header {
+    font-size: 50px;
+  }
+}
+
+.list {
+  color: black;
+  font-size: 18px;
+  transition: font-size 1s;
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+}
+
+.item {
+  cursor: pointer;
+  transition: font-size 1s;
+}
+
+.item:hover {
+  font-size: 19px;
+  color: rgb(13, 13, 187);
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
