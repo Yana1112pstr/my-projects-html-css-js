@@ -29,14 +29,17 @@ body {
 
 .btn-goback {
   position: absolute;
-  top: 15px;
+  top: 10px;
   left: 10px;
   border: 1px solid black;
   border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   width: auto;
+  color: black;
+  padding: 5 px;
+  height: 30px;
 }
 
 .btn-goback a {
