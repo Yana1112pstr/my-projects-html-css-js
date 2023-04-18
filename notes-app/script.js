@@ -25,8 +25,8 @@ function addNewNote(text = "") {
         </button>
         <button class="delete"><i class="fa-solid fa-trash"></i></button>
       </div>
-      <div class="main hidden"></div>
-      <textarea class="textarea"></textarea>
+      <div class="main ${text ? "" : "hidden"}"></div>
+      <textarea class="textarea ${text ? "hidden" : ""}"></textarea>
     `;
 
   const editBtn = note.querySelector(".edit");
