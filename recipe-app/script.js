@@ -46,7 +46,7 @@ function addMeal(mealData, random = false) {
   // add to fav/remove
   // open popup
   const meal = document.createElement("div");
-  meal.classList.add("meal)");
+  meal.classList.add("meal");
   meal.innerHTML = `
             <div class="meal-header">
             ${
@@ -137,7 +137,8 @@ function addMealFav(mealData) {
     const btnLike = meals.querySelector(".fav-btn");
     btnLike.classList.remove("active");
   });
-  favMeal.addEventListener("click", () => {
+  const favMealImg = favMeal.querySelector("img");
+  favMealImg.addEventListener("click", () => {
     showMealInfo(mealData);
   });
 
